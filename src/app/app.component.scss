@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+body{
+  height: 100vh;
+  background-color: #eceff1;
+}
+
+.form{
+  max-width: 300px;
+  width: 100%;
+
+  &__global-error{
+    background-color: red;
+    border-radius: 4px;
+    color:#fff;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+  }
+
+  &__label{
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  &__control{
+    width: 100%;
+    padding: 5px 9px;
+    outline: none;
+    border:1px solid rgba(0,0,0,.1);
+    transition: .3s;
+
+    &:focus{
+      border:1px solid #1598ff;
+    }
+  }
+
+  &__group{
+    margin-bottom: 8px;
+  }
+
+  &__flex{
+    display: flex;
+  }
+
+  &__error{
+    padding: 3px 0 0;
+    color: red;
+
+  }
+}
+
+.btn{
+  padding: 5px 8px;
+  outline: none;
+  border: 1px solid rgba(0,0,0,.1);
+  cursor: pointer;
+  background-color: #268aff;
+  transition: .3s;
+  color:#fff;
+  width: 90px;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover{
+    background-color: #2279e2;
+  }
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.mr-1{
+  margin-right: 5px;
+}
+
+input.ng-invalid.ng-touched{
+  border:1px solid red !important;
+}
+
+[disabled]{
+  cursor: not-allowed;
+}
+
+.justify-start{
+  justify-content: flex-start;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+
+.mb-1{
+  margin-bottom: 10px !important;
+}

@@ -1,0 +1,29 @@
+<div class="search">
+  <div class="flex">
+    <input type="text" placeholder="Search..." class="input" [(ngModel)]="searchStr"/>
+    <button class="btn">Search</button>
+  </div>
+</div>
+<table class="table" *ngIf = "(users$ | async | filter:searchStr:'name')?.length!==0;else empty">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users$ | async | filter:searchStr:'name'" class="table__row" (click)="onClick(user.id)">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #empty>
+  <div class="empty">No users are found</div>
+</ng-template>

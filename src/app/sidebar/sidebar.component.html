@@ -1,0 +1,9 @@
+<aside>
+  <nav class = "nav">
+    <ul class = "nav__list" *ngIf="sidebarItems.length !== 0">
+      <li class = "nav__item" *ngFor = "let sidebarItem of sidebarItems">
+        <a [routerLink]="sidebarItem.url" class = "nav__link">{{sidebarItem.content}}</a>
+      </li>
+    </ul>
+  </nav>
+</aside>

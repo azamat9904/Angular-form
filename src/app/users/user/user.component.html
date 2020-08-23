@@ -1,0 +1,72 @@
+<div class="user-detail-container">
+  <div class="user-detail">
+
+    <div class="info-group">
+      <h4 class="info-group-heading">Personal Information</h4>
+      <div class="info-group-content">
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Username:</div>
+          <div class="info-group-text">{{user.username}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Name:</div>
+          <div class="info-group-text">{{user.name}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Email:</div>
+          <div class="info-group-text">{{user.email}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Website:</div>
+          <div class="info-group-text">{{user.website}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Phone:</div>
+          <div class="info-group-text">{{user.phone}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-group">
+      <h4 class="info-group-heading">Address Information</h4>
+      <div class="info-group-content">
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Street:</div>
+          <div class="info-group-text">{{user.address.street}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">City:</div>
+          <div class="info-group-text">{{user.address.city}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Suite:</div>
+          <div class="info-group-text">{{user.address.suite}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Zipcode:</div>
+          <div class="info-group-text">{{user.address.zipcode}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-group">
+      <h4 class="info-group-heading">Company Information</h4>
+      <div class="info-group-content">
+        <div class="info-group-wrapper">
+          <div class="info-group-title">Name:</div>
+          <div class="info-group-text">{{user.company.name}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">CatchPhrase:</div>
+          <div class="info-group-text">{{user.company.catchPhrase}}</div>
+        </div>
+        <div class="info-group-wrapper">
+          <div class="info-group-title">BS:</div>
+          <div class="info-group-text">{{user.company.bs}}</div>
+        </div>
+      </div>
+    </div>
+
+    <a [routerLink]="['../edit',user.id]">Edit Information</a>
+  </div>
+</div>

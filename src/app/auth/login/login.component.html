@@ -1,0 +1,51 @@
+<div class="login">
+  <div class="login__container">
+    <form class="form" (ngSubmit)="onSubmit()" #form="ngForm">
+
+      <div class="form__global-error" *ngIf="errorMessage">
+        {{errorMessage}}
+      </div>
+
+      <div class="form__group">
+        <label for="email" class="form__label">Email</label>
+        <input
+          type="text"
+          class="form__control"
+          placeholder="Enter your email"
+          id="email"
+          ngModel
+          #email="ngModel"
+          name="email"
+          required
+          email
+        />
+        <div class="form__error" *ngIf="email.invalid && email.touched">
+          <span>Invalid email</span>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <label for="password" class="form__label">Password</label>
+        <input
+          type="password"
+          class="form__control"
+          placeholder="Enter your password"
+          id="password"
+          ngModel
+          #password="ngModel"
+          name="password"
+          required
+        />
+        <div class="form__error" *ngIf="password.invalid && password.touched">
+          <span>Invalid password</span>
+        </div>
+      </div>
+
+      <div class="form__flex">
+        <button class="btn mr-1" type="submit">Login</button>
+        <a [routerLink]="['../register']" class="btn">Sign up</a>
+      </div>
+
+    </form>
+  </div>
+</div>

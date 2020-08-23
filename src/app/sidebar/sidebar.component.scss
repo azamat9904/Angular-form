@@ -1,0 +1,21 @@
+.nav{
+  &__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+  }
+  &__item{
+    padding: 5px 0;
+  }
+  &__link{
+    color:#000;
+    text-decoration: none;
+    transition: .3s;
+    &:hover{
+      color: #ff4178;
+    }
+  }
+}

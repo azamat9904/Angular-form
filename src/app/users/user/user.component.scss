@@ -1,0 +1,46 @@
+:host{
+  width: 100%;
+}
+
+.user-detail{
+   margin: 15px auto 0;
+   width: 90%;
+
+  .info-group{
+    margin:30px 0 20px;
+
+    .info-group-heading{
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .info-group-content{
+      border-top: 1.5px solid #2680ff;
+      background-color: #fff;
+      padding:15px 10px;
+
+      .info-group-wrapper{
+        display: flex;
+        margin-bottom: 5px;
+
+        .info-group-title{
+          flex:0 0 150px;
+          color:#000;
+          font-weight: 700;
+        }
+
+        .info-group-text{
+          flex:1 0 200px;
+        }
+      }
+
+    }
+  }
+
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+}

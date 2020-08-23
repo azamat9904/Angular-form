@@ -1,0 +1,75 @@
+<div class="user-edit">
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-section">
+      <h4 class="form-heading">Personal Information</h4>
+      <div class="form-content" formGroupName="commonInfo">
+        <div class="form-group" *ngFor="let control of fieldNameMap.commonInfo">
+          <label [for]="control.field" class="form-label">{{control.text}}</label>
+          <input type="text" class="form-control" [formControlName]="control.field" [id]="control.field"/>
+          <div
+            class="form-error"
+            *ngIf="form.get('commonInfo.' + control.field).touched
+            && form.get('commonInfo.' + control.field).errors
+            && form.get('commonInfo.' + control.field).errors.required"
+          >* This field can not be empty</div>
+          <div
+            class="form-error"
+            *ngIf="form.get('commonInfo.' + control.field).touched
+            && form.get('commonInfo.' + control.field).errors
+            && form.get('commonInfo.' + control.field).errors.email"
+          >* Enter valid email</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h4 class="form-heading">Personal Information</h4>
+      <div class="form-content" formGroupName="company">
+        <div class="form-group" *ngFor="let control of fieldNameMap.company">
+          <label [for]="control.field" class="form-label">{{control.text}}</label>
+          <input type="text" class="form-control" [formControlName]="control.field" [id]="control.field"/>
+          <div
+            class="form-error"
+            *ngIf="form.get('company.' + control.field).touched
+            && form.get('company.' + control.field).invalid"
+          >* This field can not be empty</div>
+        </div>
+
+        <div class="bs">
+          <div class="form-group align-start">
+            <label class="form-label">BS</label>
+            <div class="bs-list">
+              <div class="bs-item" *ngFor="let control of bsFormArray.controls;let i = index">
+                <div class="bs-wrapper">
+                  <input type="text" class="form-control" [formControl]="control" />
+                  <span class="close" (click)="onRemoveControl(i)" *ngIf="i > 0">x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn bs-ml" (click)="addBs()">Add BS</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h4 class="form-heading">Address Information</h4>
+      <div class="form-content" formGroupName="address">
+        <div class="form-group" *ngFor="let control of fieldNameMap.address">
+          <label [for]="control.field" class="form-label">{{control.text}}</label>
+          <input type="text" class="form-control" [formControlName]="control.field" [id]="control.field"/>
+          <div
+            class="form-error"
+            *ngIf="form.get('address.' + control.field).touched
+            && form.get('address.' + control.field).invalid"
+          >* This field can not be empty</div>
+        </div>
+      </div>
+    </div>
+
+    <a [routerLink]="['../../',user.id]" class="go-back">Go Back</a>
+    <button class="btn mb-1" type="submit">Save</button>
+  </form>
+</div>

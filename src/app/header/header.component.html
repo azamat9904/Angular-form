@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header__logo">
+    <img src="assets/logo.png" alt="logo" />
+  </div>
+  <nav class="nav">
+    <ul class="nav__list" *ngIf="navItems.length!==0">
+     <ng-container *ngFor="let navItem of navItems">
+       <li class="nav__item">
+         <a [routerLink]="navItem.url" class="nav__link">{{navItem.content}}</a>
+       </li>
+     </ng-container>
+      <li class="nav__item" *ngIf="!isLoggedIn">
+        <a [routerLink]="['/auth/login']" class="nav__link">Login</a>
+      </li>
+      <li class="nav__item" *ngIf="isLoggedIn">
+        <a [routerLink]="['/']" class="nav__link" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>
